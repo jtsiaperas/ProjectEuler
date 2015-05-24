@@ -1,0 +1,29 @@
+<!Doctype = html>
+<head></head>
+<body>
+<script>
+keyNumber = 600851475143;
+prime = true;
+for (i=3; i<Math.floor(keyNumber/2); i+=2){//i will be used as a test factor
+    
+    if (keyNumber % i == 0){ //if i is a factor, then see if the number divided by i is a prime factor
+        testNumber = keyNumber/i;
+        prime = true;
+        for (j = 3; j<=Math.floor(testNumber/2); j += 2){//factors can't be larger than half the number, can only be odd since it is odd
+                
+            if (testNumber%j == 0){
+                    prime = false;
+                    break;//quits inner loop the second a factor is found
+            }
+                
+        }
+        if (prime)//if no factor of the factor is found, it is a prime number
+        {
+            window.alert("Largest prime = " + testNumber);
+            break;//quits looping once prime is found
+        }
+    }
+}
+
+</script>
+</body>
